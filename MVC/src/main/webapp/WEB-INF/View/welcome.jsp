@@ -11,9 +11,16 @@
                 <td>Welcome ${firstname}</td>
             </tr>
             <tr>
+            <td><a href = "employees">Employee</a></td>
+            </tr>
+            <tr>
+            <td><a href ="Department">Department</a></td>
             </tr>
              <tr>
+             <td><a href ="Add employee">Add employee</a></td>
             </tr>
+            
+            <tr><td><a href ="Add Department"></a>Add Department</td></tr>
             <tr>
                 <td><a href="index">Home</a>
                 </td>

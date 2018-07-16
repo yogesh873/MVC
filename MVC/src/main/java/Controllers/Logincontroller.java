@@ -9,6 +9,9 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.SessionAttribute;
+import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.support.SessionStatus;
 //import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -16,18 +19,15 @@ import DAO.useraccess;
 import Validation.Loginbean;
 import DAO.user;
 
+
+
 @Controller
+@SessionAttributes("lbean")
 public class Logincontroller {
 
 	@Autowired
 	useraccess ua;
 	
-	@GetMapping("/login")
-	public String login(@ModelAttribute("Loginbean") Loginbean lbean){
-		
-		//m.addAttribute("lbean",new Loginbean());
-			return "Login";
-	}
 	
 	
 	@PostMapping("/loginprocess")
@@ -62,5 +62,17 @@ public class Logincontroller {
 	return mav;
 	
 }
+	
+	
+	
+	
+	
+	@GetMapping("/logout")
+public ModelAndView m1(SessionStatus status){
+		
+		status.setComplete();
+		return new ModelAndView("index");
+			
+	}
 	
 }

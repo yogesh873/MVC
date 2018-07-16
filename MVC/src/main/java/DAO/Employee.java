@@ -1,10 +1,15 @@
 package DAO;
 
+
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
-import org.hibernate.annotations.Table;
+import org.springframework.lang.Nullable;
+
+
 /*
 EMPNO	NUMBER(4,0)	No	-	1
 ENAME	VARCHAR2(10)	Yes	-	-
@@ -16,17 +21,24 @@ COMM	NUMBER(7,2)	Yes	-	-
 DEPTNO	NUMBER(2,0)	Yes	-	-
 */
 @Entity
-@Table( appliesTo = "emp")
+@Table( name = "EMP",schema ="claim")
 public class Employee {
 
+	@Id
 	int empno;
 	String ename;
 	String job;
-	int mgr;
+	Integer mgr;
 	Date Hiredate;
 	double sal;
-	double comm;
+	
+	Double comm;
 	double deptno;
+	
+	public Employee(){
+	}
+	
+	
 	public int getEmpno() {
 		return empno;
 	}
@@ -48,8 +60,11 @@ public class Employee {
 	public int getMgr() {
 		return mgr;
 	}
-	public void setMgr(int mgr) {
+	public void setMgr(Integer mgr) {
+		if(mgr!=null)
 		this.mgr = mgr;
+		else 
+		this.mgr = 0;	
 	}
 	public Date getHiredate() {
 		return Hiredate;
@@ -66,8 +81,12 @@ public class Employee {
 	public double getComm() {
 		return comm;
 	}
-	public void setComm(double comm) {
+	public void setComm(Double comm) {
+		
+		//if(comm != null)
 		this.comm = comm;
+		//else 
+		//comm =0.0;	
 	}
 	public double getDeptno() {
 		return deptno;
@@ -76,6 +95,11 @@ public class Employee {
 		this.deptno = deptno;
 	}
 	
-	
+	@Override
+	public String toString()
+	{
+		return "Employe:"+empno ;
+		
+	}
 	
 }
