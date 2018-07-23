@@ -17,4 +17,8 @@ http://www.springframework.org/schema/context/spring-context-3.0.xsd">
         <property name="prefix" value="WEB-INF/View/" />
         <property name="suffix" value=".jsp" />
     </bean>
+    <mvc:interceptors>
+    <bean id="ExecutionTime" class="Interceptors.ExecutionTime"/>
+</mvc:interceptors>
+    
     </beans>

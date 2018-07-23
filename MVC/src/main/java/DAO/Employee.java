@@ -2,9 +2,12 @@ package DAO;
 
 
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import org.springframework.lang.Nullable;
@@ -33,8 +36,23 @@ public class Employee {
 	double sal;
 	
 	Double comm;
-	double deptno;
 	
+	@OneToOne
+	Department  dep;
+	
+	@OneToMany(mappedBy ="emp")
+	List<Laptop> ltop;
+	
+	public List<Laptop> getLtop() {
+		return ltop;
+	}
+
+
+	public void setLtop(List<Laptop> ltop) {
+		this.ltop = ltop;
+	}
+
+
 	public Employee(){
 	}
 	
@@ -57,7 +75,7 @@ public class Employee {
 	public void setJob(String job) {
 		this.job = job;
 	}
-	public int getMgr() {
+	public Integer getMgr() {
 		return mgr;
 	}
 	public void setMgr(Integer mgr) {
@@ -88,13 +106,18 @@ public class Employee {
 		//else 
 		//comm =0.0;	
 	}
-	public double getDeptno() {
-		return deptno;
-	}
-	public void setDeptno(double deptno) {
-		this.deptno = deptno;
-	}
 	
+	
+	public Department getDep() {
+		return dep;
+	}
+
+
+	public void setDep(Department dep) {
+		this.dep = dep;
+	}
+
+
 	@Override
 	public String toString()
 	{

@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
+
+import Interceptors.ExecutionTime;
 import Validation.Loginbean;
 //import DAO.user;
 
@@ -21,9 +23,19 @@ public class First_Controller {
 	
 	@GetMapping(value = {"/" , "/index"})
 	public ModelAndView m1(){
-		
+		try{
+			ExecutionTime.lctn ="First controller";
 		return new ModelAndView("index");
+		}
+		catch(Exception e){
+			System.out.println("exception here1"+e);
+			return new ModelAndView("index");
 			
+		}
+		finally
+		{
+			System.out.println("exception here");
+		}
 	}
 	
 	

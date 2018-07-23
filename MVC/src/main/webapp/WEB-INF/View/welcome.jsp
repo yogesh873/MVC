@@ -8,7 +8,7 @@
     <body>
         <table>
             <tr>
-                <td>Welcome ${firstname}</td>
+                <td>Welcome ${firstname} ExecutionTime ${executeTime}</td>
             </tr>
             <tr>
             <td><a href = "employees">Employee</a></td>
@@ -17,7 +17,7 @@
             <td><a href ="Department">Department</a></td>
             </tr>
              <tr>
-             <td><a href ="Add employee">Add employee</a></td>
+             <td><a href ="Add employee">Add_employee</a></td>
             </tr>
             
             <tr><td><a href ="Add Department"></a>Add Department</td></tr>

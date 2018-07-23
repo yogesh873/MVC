@@ -10,7 +10,9 @@
         <body>
         <form:form modelAttribute="employee"  action="View_detail" method="post">
       <table align="center">
+      <th>Empno</th><th>Ename</th>
     <c:forEach items="${Employee}" var="Emp">
+    
     <tr>
       <td><c:out value="${Emp.empno}" /></td>
       <td><c:out value="${Emp.ename}" /></td>
