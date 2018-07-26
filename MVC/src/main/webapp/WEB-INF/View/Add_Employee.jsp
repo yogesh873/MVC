@@ -18,7 +18,7 @@
 <form:form method = "post" modelAttribute = "EMP">
 <table>
 <tr>
-<td>Employee Name</tr>
+<td>Employee Name</td>
 <td><form:input path = "ename"/> </td>
 <td><form:errors path = "ename" cssClass = "error" /></td>
 </tr>

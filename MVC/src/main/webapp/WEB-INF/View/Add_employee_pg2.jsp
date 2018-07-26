@@ -16,21 +16,29 @@
 <body>
 <form:form method = "post" modelAttribute = "Emp">
 <table>
-<tr>Salary </tr>
-<tr><form:input path="sal" />   </tr>
-<tr><form:errors path ="sal" cssClass = "error"/></tr>
+<tr>
+<td>Salary </td>
+<td><form:input path="sal" />   </td>
+<td><form:errors path ="sal" cssClass = "error"/></td>
+</tr>
 </table>
 
 <table>
-<tr>Department </tr>
-<tr><form:input path="dep" />   </tr>
-<tr><form:errors path ="dep" cssClass = "error"/></tr>
+<tr>
+<td>Department</td>
+<td><form:select path="dname" items = "${DNAME}" itemvalue = "dnane" itemName = "Dept Name"/>   </td>
+<td><form:errors path ="dep" cssClass = "error"/></td>
+</tr>
 </table>
+<tr>
+<td colspan = "3">
+<input type = "hidden" value ="1" name = "_page"/>
+<input type = "submit" value = "next" name = "_target2"/>
+<input type ="submit" value ="previous" name = "_target0"/>
+<input type = "submit" value ="Cancel" name = "_cancel"/>
+</td>
+</tr>
 
 </form:form>
-
-
-
-
 
 </body>
