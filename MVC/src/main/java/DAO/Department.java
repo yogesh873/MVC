@@ -38,7 +38,11 @@ public class Department {
 		this.loc = loc;
 	}
 	
-	
-	
+	@Override
+	public String toString()
+	{
+	return deptno+dname;	
+		
+	}
 	
 }

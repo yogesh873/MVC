@@ -13,6 +13,14 @@ http://www.springframework.org/schema/context/spring-context-3.0.xsd">
       <mvc:annotation-driven /> 
     <context:component-scan base-package="Controllers" />
     <context:annotation-config />
+    
+    <bean id="conversionService" class="org.springframework.context.support.ConversionServiceFactoryBean">
+<property name="converters">
+<list>
+<bean class="Converter.Departmentconverter" />
+</list>
+</property>
+</bean>
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="WEB-INF/View/" />
         <property name="suffix" value=".jsp" />

@@ -15,7 +15,7 @@
 </head>
 
 <body>
-<form:form method = "post" modelAttribute = "EMP">
+<form:form method = "post" modelAttribute = "Emp">
 <table>
 <tr>
 <td>Employee Name</td>
