@@ -26,7 +26,7 @@
 <table>
 <tr>
 <td>Department</td>
-<td><form:select path="dep" items = "${DNAME}" itemvalue = "dnane" itemName = "Dept Name"/>   </td>
+<td><form:select path="dep" items = "${DNAME}" itemvalue = "dname" itemName = "Dept Name"/>   </td>
 <td><form:errors path ="dep" cssClass = "error"	/></td>
 </tr>
 </table>

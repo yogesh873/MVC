@@ -14,30 +14,37 @@
 </style>
 </head>
 <body>
-<form:form modelattribute = "Emp">
+<form:form modelattribute = "Emp" >
 <table>
-	<c:forEach items = "${Emp}" var = "Emp.Laptop">
+	
 	<tr>
 	
-	<td><form:input path="Emp.Laptop.lId"/> 	</td>
-	<td><form:input path="Emp.Laptop.lname"/></td>
+	
+	<c:forEach var="Emp" items="${Emp.ltop}" varStatus="status">
+	<td>Lname</td>
+   <form:input path="ltop[${status.index}].lname" name="lname" id="lname" value="" />
+        <td>Lid</td>
+   <form:input path="ltop[${status.index}].lid" name="lid" id="lid" value="" />
+    </c:forEach>
 	
 	
 	</tr>
 	
 	
-	</c:forEach>
+	
 	
 	</table>
 	
-	
+	<table>
+	<tr>
 	<td colspan = "3">
 <input type = "hidden" value ="2" name = "_page"/>
 <input type = "submit" value = "cancel" name = "_cancel"/>
 <input type ="submit" value ="previous" name = "_target1"/>
 <input type = "submit" value ="FINISH" name = "_finish"/>
 </td>
-</tr> 
+</tr>
+</table> 
 </form:form>	
 </body>
 </html>

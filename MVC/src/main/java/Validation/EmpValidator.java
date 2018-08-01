@@ -40,7 +40,7 @@ ValidationUtils.rejectIfEmpty(err, "job", "required.job", "job detail is require
 public void validatepg2(Object Target, Errors err)
 {try{
 ValidationUtils.rejectIfEmpty(err, "sal", "required.sal","sal details is required");	
-ValidationUtils.rejectIfEmpty(err, "dnmae", "required.dname","department must be selected");
+//ValidationUtils.rejectIfEmpty(err, "dnmae", "required.dname","department must be selected");
 }
 catch(NullPointerException e){
 System.out.println("caught");

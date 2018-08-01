@@ -27,6 +27,7 @@ import org.springframework.web.util.WebUtils;
 
 import DAO.Department;
 import DAO.Employee;
+import DAO.Laptop;
 import Service.DepartmentCRUD;
 import Validation.EmpValidator;
 import ch.qos.logback.core.net.SyslogOutputStream;
@@ -103,9 +104,11 @@ public ModelAndView cancel(@RequestParam("currentpage")int pageno){
 	@PostMapping
 public ModelAndView process(HttpServletRequest request,@RequestParam("_page") int currentpage, @ModelAttribute("Emp") Employee emp, BindingResult br)
 {
+		System.out.println("postmapping called for "+currentpage);
 	
 int targetpage = getTargetPage(request,"_target",currentpage);
 ModelAndView mav;
+
 System.out.println("targetpage"+page.get(targetpage));
 if(targetpage == currentpage)
 	mav = new ModelAndView("error");
@@ -126,19 +129,25 @@ else
 mav = new ModelAndView(page.get(currentpage));	
 
 }
-
+if(targetpage == 3)
+{
+List<Laptop> ltop = dc.getdummylaptop();
+mav.addObject("ltop", ltop);
+}
 return mav;
 }
 	
 public int getTargetPage(HttpServletRequest req, String prefix , int currntpg)
 {
+	
+	System.out.println("inside target");
 Enumeration<String> reqprms =  req.getParameterNames();
-String[] s= req.getParameterValues("_target1");
+//String[] s= req.getParameterValues();
 
 int crrnt = currntpg;
 
-for(String s1 :s)
-System.out.println("Entry sey"+s1);
+//for(String s1 :s)
+//System.out.println("Entry sey"+s1);
 
 
 while(reqprms.hasMoreElements())
