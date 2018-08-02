@@ -52,7 +52,7 @@
 </td>
 
 </tr>
-
+        <tr><input type = "submit" value ="logout" /> </tr>
 </table>
 
 
